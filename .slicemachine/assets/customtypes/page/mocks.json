@@ -1,0 +1,49 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "courage"
+  },
+  "title": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "heading1",
+        "content": {
+          "text": "Surrounded"
+        }
+      }
+    ]
+  },
+  "slices": {
+    "__TYPE__": "SliceContentType",
+    "value": [
+      {
+        "key": "rich_text$76f0fd1c-cc3b-40d9-9541-b5690114573d",
+        "name": "rich_text",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default",
+          "primary": {
+            "content": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Do sint fugiat deserunt occaecat aliquip ut cillum in ut excepteur eu deserunt elit elit velit. Nisi ipsum mollit culpa deserunt nostrud aliqua do aliquip do cupidatat magna incididunt velit nostrud. Occaecat reprehenderit laborum tempor Lorem adipisicing incididunt tempor pariatur pariatur id."
+                  }
+                }
+              ]
+            }
+          },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": []
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

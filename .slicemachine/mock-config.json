@@ -1,0 +1,9 @@
+{
+  "slices": {
+    "RichText": {
+      "default": {
+        "primary": {}
+      }
+    }
+  }
+}

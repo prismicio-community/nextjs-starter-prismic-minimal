@@ -1,38 +1,124 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Prismic + Next.js Minimal TypeScript Starter
 
-## Getting Started
+Want to quickly get started building your own project with [Prismic][prismic], [Next.js][nextjs], and TypeScript? This project includes basic configurations and nothing else. The project includes one Rich Text Slice, a homepage, and a dynamic page.
 
-First, run the development server:
+- **Demo**: [Open live demo][live-demo]
+- **Learn more about Prismic and Next.js**: [Prismic Next.js Documentation][prismic-docs]
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+&nbsp;
+
+<img width="1334" alt="Screenshot of the site on a desktop browser" src="https://user-images.githubusercontent.com/31219208/225357363-5f020f0f-16cb-43c6-b191-5c55dfd1be91.png">
+
+&nbsp;
+
+## 🚀 Quick Start
+
+To start a new project using this starter, run the following commands in your terminal:
+
+```sh
+npx degit prismicio-community/nextjs-starter-prismic-minimal-ts your-project-name
+cd your-project-name
+npx @slicemachine/init
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The commands will do the following:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+1. Start a new Next.js project using this starter.
+2. Ask you to log in to Prismic or [create an account][prismic-sign-up].
+3. Create a new Prismic content repository with sample content.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+When you're ready to start your project, run the following command:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```sh
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## How to use your project
 
-## Learn More
+To edit the content of this project, go to [prismic.io/dashboard](https://prismic.io/dashboard), click on the repository for this website, and start editing.
 
-To learn more about Next.js, take a look at the following resources:
+### Create a page
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To create a page, click on the green pencil icon, then select **Page**.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Pages are made of Slices. You can add and rearrange Slices to your pages.
 
-## Deploy on Vercel
+Your new page will be accessible by its URL, but it won't appear on the website automatically. To let users discover it, add it to the navigation.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Preview documents
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+If you chose this starter when you created a new repository from the Prismic Dashboard, then your repository is preconfigured with previews on localhost. To change the preview configuration or add previews to your production or staging environments, see [Preview Drafts in Next.js](https://prismic.io/docs/technologies/preview-content-nextjs) in the Prismic documentation.
+
+### Customize this website
+
+This website is preconfigured with Prismic. It has three Prismic packages installed:
+
+- `@prismicio/client` provides helpers for fetching content from Prismic
+- `@prismicio/react` provides React components for rendering content from Prismic
+- `@prismicio/next` provides a wrapper component to configure Prismic previews
+
+These packages are already integrated and employed in this app. Take a look at the code to see how they're used.
+
+### Edit the code
+
+There are two steps to rendering content from Prismic in your Next.js project:
+
+1. Fetch content from the Prismic API using `@prismicio/client`.
+2. Template the content using components from `@prismicio/react`.
+
+Here are some of the files in your project that you can edit:
+
+- `prismicio.ts` - This file includes configuration for `@prismicio/client` and exports useful API helpers.
+- `pages/\_app.tsx` - This is your app component, which includes configuration for `@prismicio/react` and `@prismicio/next`.
+- `pages/index.tsx` - This is the app homepage. It queries and renders a page document with the UID (unique identifier) "home" from the Prismic API.
+- `pages/[uid].tsx` - This is the page component, which queries and renders a page document from your Prismic repository based on the UID.
+- `slices/\*/index.tsx` - Each Slice in your project has an index.js file that renders the Slice component. Edit this file to customize your Slices.
+
+These are important files that you should leave as-is:
+
+- `pages/api/exit-preview.ts` - Do not edit or delete this file. This is the API endpoint to close a Prismic preview session.
+- `pages/api/preview.ts` - Do not edit or delete this file. This is the API endpoint to launch a Prismic preview session.
+- `pages/slice-simulator.tsx` - Do not edit or delete this file. This file simulates your Slice components in development.
+- `slices/` - This directory contains Slice components, which are generated programmatically by Slice Machine. To customize a Slice template, you can edit the Slice's index.js file. To add Slices, delete Slices, or edit Slice models, use Slice Machine (more info below).
+
+Learn more about how to edit your components with [Fetch Data in Next.js](https://prismic.io/docs/technologies/fetch-data-nextjs) and [Template Content in Next.js](https://prismic.io/docs/technologies/template-content-nextjs).
+
+Learn more about how to use [TypeScript with Prismic](https://prismic.io/docs/typescript-nextjs).
+
+### Deploy to the web
+
+To put your project online, see [Deploy your Next.js App](https://prismic.io/docs/technologies/deploy-nextjs).
+
+### Edit content models with Slice Machine
+
+This project includes an application called Slice Machine, which generates models for your Custom Types and Slices. Slice Machine stores the models locally in your codebase, so you can save and version them. It also syncs your models to Prismic. To learn how to use Slice Machine, read [Model Content in Next.js](https://prismic.io/docs/technologies/model-content-nextjs).
+
+If you change or add to your Custom Types, you'll need to update your route handling to match. To learn how to do that, read [Define Paths in Next.js](https://prismic.io/docs/technologies/define-paths-nextjs).
+
+## Documentation
+
+For the official Prismic documentation, see [Prismic's guide for Next.js](prismic-docs) or the [technical references for the installed Prismic packages](https://prismic.io/docs/technologies/technical-references).
+
+## License
+
+```
+Copyright 2013-2022 Prismic <contact@prismic.io> (https://prismic.io)
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
+
+[prismic]: https://prismic.io/
+[prismic-docs]: https://prismic.io/docs/technologies/nextjs
+[prismic-sign-up]: https://prismic.io/dashboard/signup
+[nextjs]: https://nextjs.org/
+[live-demo]: https://nextjs-starter-prismic-minimal.vercel.app/
