@@ -1,10 +1,10 @@
-import Head from 'next/head';
-import { SliceZone } from '@prismicio/react';
-import * as prismicH from '@prismicio/helpers';
-import type { InferGetStaticPropsType, GetStaticPropsContext } from 'next';
+import type { InferGetStaticPropsType, GetStaticPropsContext } from "next";
+import Head from "next/head";
+import * as prismicH from "@prismicio/helpers";
+import { SliceZone } from "@prismicio/react";
 
-import { createClient } from '../prismicio';
-import { components } from '../slices/';
+import { createClient } from "../prismicio";
+import { components } from "../slices/";
 
 type PageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
@@ -32,7 +32,7 @@ export async function getStaticProps({ previewData }: GetStaticPropsContext) {
    */
   const client = createClient({ previewData });
 
-  const page = await client.getByUID('page', 'home');
+  const page = await client.getByUID("page", "home");
 
   return {
     props: {

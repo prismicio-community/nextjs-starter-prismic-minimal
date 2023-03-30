@@ -1,11 +1,11 @@
-import Head from 'next/head';
-import { SliceZone } from '@prismicio/react';
-import * as prismic from '@prismicio/client';
-import * as prismicH from '@prismicio/helpers';
-import type { InferGetStaticPropsType, GetStaticPropsContext } from 'next';
+import type { InferGetStaticPropsType, GetStaticPropsContext } from "next";
+import Head from "next/head";
+import * as prismic from "@prismicio/client";
+import * as prismicH from "@prismicio/helpers";
+import { SliceZone } from "@prismicio/react";
 
-import { createClient } from '../prismicio';
-import { components } from '../slices/';
+import { createClient } from "../prismicio";
+import { components } from "../slices";
 
 type PageProps = InferGetStaticPropsType<typeof getStaticProps>;
 type PageParams = { uid: string };
@@ -31,7 +31,7 @@ export async function getStaticProps({
   const client = createClient({ previewData });
 
   if (params && params.uid) {
-    const page = await client.getByUID('page', params.uid);
+    const page = await client.getByUID("page", params.uid);
 
     if (page) {
       return {
@@ -43,10 +43,7 @@ export async function getStaticProps({
   }
 
   return {
-    redirect: {
-      permanent: false,
-      destination: '/404',
-    },
+    notFound: true,
   };
 }
 
@@ -56,8 +53,8 @@ export async function getStaticPaths() {
   /**
    * Query all Documents from the API, except the homepage.
    */
-  const pages = await client.getAllByType('page', {
-    predicates: [prismic.predicate.not('my.page.uid', 'home')],
+  const pages = await client.getAllByType("page", {
+    predicates: [prismic.predicate.not("my.page.uid", "home")],
   });
 
   /**
