@@ -97,7 +97,7 @@ If you change or add to your Custom Types, you'll need to update your route hand
 
 ## Documentation
 
-For the official Prismic documentation, see [Prismic's guide for Next.js](prismic-docs) or the [technical references for the installed Prismic packages](https://prismic.io/docs/technologies/technical-references).
+For the official Prismic documentation, see [Prismic's guide for Next.js][prismic-docs] or the [technical references for the installed Prismic packages](https://prismic.io/docs/technologies/technical-references).
 
 ## License
 
