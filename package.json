@@ -28,7 +28,8 @@
   },
   "devDependencies": {
     "@prismicio/types": "^0.2.7",
+    "@slicemachine/adapter-next": "^0.0.12",
     "concurrently": "^7.5.0",
-    "slice-machine-ui": "^0.7.1"
+    "slice-machine-ui": "^0.6.1-dev-plugins-m3.4"
   }
 }

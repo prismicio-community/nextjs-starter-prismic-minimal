@@ -1,0 +1,5 @@
+{
+  "libraries": ["./slices"],
+  "adapter": "@slicemachine/adapter-next",
+  "repositoryName": "nextjs-starter-prismic-minimal"
+}
