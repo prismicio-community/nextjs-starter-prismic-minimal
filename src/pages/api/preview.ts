@@ -1,7 +1,7 @@
 import * as prismicNext from "@prismicio/next";
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { createClient } from "../../prismicio";
+import { createClient } from "@/prismicio";
 
 /**
  * This endpoint handles previews that are launched from the Page Builder.
