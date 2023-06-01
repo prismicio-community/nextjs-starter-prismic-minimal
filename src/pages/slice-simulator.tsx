@@ -1,4 +1,4 @@
-import { SliceSimulator } from "@prismicio/slice-simulator-react";
+import { SliceSimulator } from "@slicemachine/adapter-next/simulator";
 import { SliceZone } from "@prismicio/react";
 
 import { components } from "../slices";
@@ -13,7 +13,6 @@ export default function SliceSimulatorPage() {
       // The "sliceZone" prop should be a function receiving Slices and
       // rendering them using your "SliceZone" component.
       sliceZone={(props) => <SliceZone {...props} components={components} />}
-      state={{}}
     />
   );
 }
