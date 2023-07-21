@@ -20,7 +20,6 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     title: prismic.asText(home.data.title),
-    description: home.data.meta_description,
   };
 }
 

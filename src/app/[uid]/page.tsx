@@ -22,7 +22,6 @@ export async function generateMetadata({
 
     return {
       title: prismic.asText(page.data.title),
-      description: page.data.meta_description,
     };
 }
 
