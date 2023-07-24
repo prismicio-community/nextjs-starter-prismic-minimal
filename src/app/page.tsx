@@ -20,6 +20,15 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     title: prismic.asText(home.data.title),
+    description: home.data.meta_description,
+    openGraph: {
+      title: home.data.meta_title,
+      images: [
+        {
+          url: home.data.meta_image.url
+        }
+      ]
+    }
   };
 }
 
