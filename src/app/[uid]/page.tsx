@@ -24,10 +24,10 @@ export async function generateMetadata({
       title: prismic.asText(page.data.title),
       description: page.data.meta_description,
       openGraph: {
-        title: page.data.meta_title,
+        title: page.data.meta_title || undefined,
         images: [
           {
-            url: page.data.meta_image.url
+            url: page.data.meta_image.url || "",
           }
         ]
       }
