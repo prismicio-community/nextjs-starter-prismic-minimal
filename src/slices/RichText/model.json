@@ -18,9 +18,7 @@
             "placeholder": "Lorem ipsum...",
             "allowTargetBlank": true,
             "multi": "paragraph,preformatted,heading1,heading2,heading3,strong,em,hyperlink,embed,list-item",
-            "labels": [
-              "codespan"
-            ]
+            "labels": ["codespan"]
           }
         }
       },

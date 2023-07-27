@@ -14,21 +14,20 @@ type Params = { uid: string };
 
 export async function generateMetadata({
   params,
- }: {
+}: {
   params: Params;
- }): Promise<Metadata> {
-    const client = createClient();
-    const page = await client.getByUID("page", params.uid);
+}): Promise<Metadata> {
+  const client = createClient();
+  const page = await client.getByUID("page", params.uid);
 
-    return {
-      title: prismic.asText(page.data.title),
-    };
+  return {
+    title: prismic.asText(page.data.title),
+  };
 }
-
 
 export default async function Page({ params }: { params: Params }) {
   const client = createClient();
-  const page = await client.getByUID("page", params.uid)
+  const page = await client.getByUID("page", params.uid);
 
   return <SliceZone slices={page.data.slices} components={components} />;
 }
