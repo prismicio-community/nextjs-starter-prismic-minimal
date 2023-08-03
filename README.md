@@ -69,15 +69,15 @@ There are two steps to rendering content from Prismic in your Next.js project:
 Here are some of the files in your project that you can edit:
 
 - `prismicio.ts` - This file includes configuration for `@prismicio/client` and exports useful API helpers.
-- `app/\layout.tsx` - This is your layout component, which includes configuration for `@prismicio/react` and `@prismicio/next`.
+- `app/layout.tsx` - This is your layout component, which includes configuration for `@prismicio/react` and `@prismicio/next`.
 - `app/page.tsx` - This is the app homepage. It queries and renders a page document with the UID (unique identifier) "home" from the Prismic API.
 - `app/[uid]/page.tsx` - This is the page component, which queries and renders a page document from your Prismic repository based on the UID.
-- `slices/\*/index.tsx` - Each Slice in your project has an index.js file that renders the Slice component. Edit this file to customize your Slices.
+- `slices/*/index.tsx` - Each Slice in your project has an index.js file that renders the Slice component. Edit this file to customize your Slices.
 
 These are important files that you should leave as-is:
 
 - `app/api/exit-preview/route.ts` - Do not edit or delete this file. This is the API endpoint to close a Prismic preview session.
-- `app/api/preview/page.ts` - Do not edit or delete this file. This is the API endpoint to launch a Prismic preview session.
+- `app/api/preview/route.ts` - Do not edit or delete this file. This is the API endpoint to launch a Prismic preview session.
 - `app/slice-simulator/page.tsx` - Do not edit or delete this file. This file simulates your Slice components in development.
 - `slices/` - This directory contains Slice components, which are generated programmatically by Slice Machine. To customize a Slice template, you can edit the Slice's index.js file. To add Slices, delete Slices, or edit Slice models, use Slice Machine (more info below).
 
