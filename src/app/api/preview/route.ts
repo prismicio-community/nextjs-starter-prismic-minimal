@@ -9,5 +9,5 @@ import { createClient } from "@/prismicio";
 export async function GET(request: NextRequest) {
   const client = createClient();
 
-  await redirectToPreviewURL({ client, request });
+  return await redirectToPreviewURL({ client, request });
 }
