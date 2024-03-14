@@ -30,8 +30,7 @@ interface PageDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<PageDocumentDataSlicesSlice>
-  /**
+  slices: prismic.SliceZone<PageDocumentDataSlicesSlice> /**
    * Meta Title field in *Page*
    *
    * - **Field Type**: Text
@@ -128,7 +127,7 @@ declare module "@prismicio/client" {
   interface CreateClient {
     (
       repositoryNameOrEndpoint: string,
-      options?: prismic.ClientConfig
+      options?: prismic.ClientConfig,
     ): prismic.Client<AllDocumentTypes>;
   }
 
@@ -136,8 +135,10 @@ declare module "@prismicio/client" {
     export type {
       PageDocument,
       PageDocumentData,
+      PageDocumentDataSlicesSlice,
       AllDocumentTypes,
       RichTextSlice,
+      RichTextSliceDefaultPrimary,
       RichTextSliceVariation,
       RichTextSliceDefault,
     };

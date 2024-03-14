@@ -3,15 +3,13 @@ import { repositoryName } from "@/prismicio";
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en">
-      <body>
-        {children}
-        <PrismicPreview repositoryName={repositoryName} />
-      </body>
+      <body>{children}</body>
+      <PrismicPreview repositoryName={repositoryName} />
     </html>
   );
 }
