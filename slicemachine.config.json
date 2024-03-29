@@ -1,6 +1,7 @@
 {
-  "libraries": ["./src/slices"],
-  "adapter": "@slicemachine/adapter-next",
   "repositoryName": "nextjs-starter-prismic-minimal",
-  "localSliceSimulatorURL": "http://localhost:3000/slice-simulator"
+  "adapter": "@slicemachine/adapter-next",
+  "libraries": ["./src/slices"],
+  "localSliceSimulatorURL": "http://localhost:3000/slice-simulator",
+  "apiEndpoint": ""
 }
