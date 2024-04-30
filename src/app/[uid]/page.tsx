@@ -43,7 +43,13 @@ export default async function Page({ params }: { params: Params }) {
     .getByUID("page", params.uid)
     .catch(() => notFound());
 
-  console.error("TESTING ERROR LOGGING WITH console.error");
+  console.error(
+    new prismic.PrismicError(
+      "Example error",
+      "https://vercel.com",
+      new Response(),
+    ),
+  );
 
   return <SliceZone slices={page.data.slices} components={components} />;
 }
