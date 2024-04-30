@@ -43,6 +43,8 @@ export default async function Page({ params }: { params: Params }) {
     .getByUID("page", params.uid)
     .catch(() => notFound());
 
+  console.error("TESTING ERROR LOGGING WITH console.error");
+
   return <SliceZone slices={page.data.slices} components={components} />;
 }
 
