@@ -9,7 +9,14 @@ import { components } from "@/slices";
 
 export default function SliceSimulatorPage({
   searchParams,
-}: SliceSimulatorParams) {
+}: SliceSimulatorParams & { searchParams: { secret?: string } }) {
+  if (
+    process.env.SLICE_SIMULATOR_SECRET &&
+    searchParams.secret !== process.env.SLICE_SIMULATOR_SECRET
+  ) {
+    throw new Error("Incorrect or missing secret");
+  }
+
   const slices = getSlices(searchParams.state);
 
   return (
