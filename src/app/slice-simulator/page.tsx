@@ -4,6 +4,7 @@ import {
   getSlices,
 } from "@slicemachine/adapter-next/simulator";
 import { SliceZone } from "@prismicio/react";
+import { redirect } from "next/navigation";
 
 import { components } from "@/slices";
 
@@ -14,7 +15,7 @@ export default function SliceSimulatorPage({
     process.env.SLICE_SIMULATOR_SECRET &&
     searchParams.secret !== process.env.SLICE_SIMULATOR_SECRET
   ) {
-    throw new Error("Incorrect or missing secret");
+    redirect("/");
   }
 
   const slices = getSlices(searchParams.state);
