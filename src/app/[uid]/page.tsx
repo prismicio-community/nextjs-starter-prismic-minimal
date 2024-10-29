@@ -16,11 +16,11 @@ type Params = { uid: string };
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<Params>;
+  params: Params;
 }): Promise<Metadata> {
   const client = createClient();
   const page = await client
-    .getByUID("page", (await params).uid)
+    .getByUID("page", params.uid)
     .catch(() => notFound());
 
   return {
@@ -37,10 +37,10 @@ export async function generateMetadata({
   };
 }
 
-export default async function Page({ params }: { params: Promise<Params> }) {
+export default async function Page({ params }: { params: Params }) {
   const client = createClient();
   const page = await client
-    .getByUID("page", (await params).uid)
+    .getByUID("page", params.uid)
     .catch(() => notFound());
 
   return <SliceZone slices={page.data.slices} components={components} />;
