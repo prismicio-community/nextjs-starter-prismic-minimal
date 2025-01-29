@@ -1,3 +1,4 @@
+import { FC } from "react";
 import type { Content } from "@prismicio/client";
 import { PrismicNextLink } from "@prismicio/next";
 import {
@@ -26,7 +27,7 @@ type RichTextProps = SliceComponentProps<Content.RichTextSlice>;
 /**
  * Component for "RichText" Slices.
  */
-const RichText = ({ slice }: RichTextProps): JSX.Element => {
+const RichText: FC<RichTextProps> = ({ slice }) => {
   return (
     <section className={styles.richtext}>
       <PrismicRichText field={slice.primary.content} components={components} />
