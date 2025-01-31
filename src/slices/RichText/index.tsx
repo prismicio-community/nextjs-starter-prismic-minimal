@@ -1,10 +1,10 @@
-import { FC } from "react";
-import type { Content } from "@prismicio/client";
+import { type FC } from "react";
+import { type Content } from "@prismicio/client";
 import { PrismicNextLink } from "@prismicio/next";
 import {
   PrismicRichText,
-  SliceComponentProps,
-  JSXMapSerializer,
+  type SliceComponentProps,
+  type JSXMapSerializer,
 } from "@prismicio/react";
 import styles from "./index.module.css";
 
