@@ -1,17 +1,22 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+import { asText, filter } from "@prismicio/client";
 import { SliceZone } from "@prismicio/react";
-import * as prismic from "@prismicio/client";
 
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 
 type Params = { uid: string };
 
-/**
- * This page renders a Prismic Document dynamically based on the URL.
- */
+export default async function Page({ params }: { params: Promise<Params> }) {
+  const { uid } = await params;
+  const client = createClient();
+  const page = await client.getByUID("page", uid).catch(() => notFound());
+
+  // <SliceZone> renders the page's slices.
+  return <SliceZone slices={page.data.slices} components={components} />;
+}
 
 export async function generateMetadata({
   params,
@@ -23,41 +28,22 @@ export async function generateMetadata({
   const page = await client.getByUID("page", uid).catch(() => notFound());
 
   return {
-    title: prismic.asText(page.data.title),
+    title: asText(page.data.title),
     description: page.data.meta_description,
     openGraph: {
-      title: page.data.meta_title || undefined,
-      images: [
-        {
-          url: page.data.meta_image.url || "",
-        },
-      ],
+      title: page.data.meta_title ?? undefined,
+      images: [{ url: page.data.meta_image.url ?? "" }],
     },
   };
-}
-
-export default async function Page({ params }: { params: Promise<Params> }) {
-  const { uid } = await params;
-  const client = createClient();
-  const page = await client.getByUID("page", uid).catch(() => notFound());
-
-  return <SliceZone slices={page.data.slices} components={components} />;
 }
 
 export async function generateStaticParams() {
   const client = createClient();
 
-  /**
-   * Query all Documents from the API, except the homepage.
-   */
+  // Get all pages from Prismic, except the homepage.
   const pages = await client.getAllByType("page", {
-    predicates: [prismic.filter.not("my.page.uid", "home")],
+    filters: [filter.not("my.page.uid", "home")],
   });
 
-  /**
-   * Define a path for every Document.
-   */
-  return pages.map((page) => {
-    return { uid: page.uid };
-  });
+  return pages.map((page) => ({ uid: page.uid }));
 }

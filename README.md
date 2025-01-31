@@ -1,6 +1,6 @@
 # Prismic + Next.js Minimal Starter
 
-Want to quickly get started building your own project with [Prismic][prismic] and [Next.js][nextjs]? This project includes basic configurations and nothing else. The project includes one Rich Text Slice, a homepage, and a dynamic page.
+Want to quickly get started building your own project with [Prismic][prismic] and [Next.js][nextjs]? This project includes basic configurations and nothing else. The project includes one Rich Text slice, a homepage, and a dynamic page.
 
 - **Demo**: [Open live demo][live-demo]
 - **Learn more about Prismic and Next.js**: [Prismic Next.js Documentation][prismic-docs]
@@ -13,19 +13,12 @@ Want to quickly get started building your own project with [Prismic][prismic] an
 
 ## 🚀 Quick Start
 
-To start a new project using this starter, run the following commands in your terminal:
+To start a new project using this starter:
 
-```sh
-npx degit prismicio-community/nextjs-starter-prismic-minimal your-project-name
-cd your-project-name
-npx @slicemachine/init@latest
-```
-
-The commands will do the following:
-
-1. Start a new Next.js project using this starter.
-2. Ask you to log in to Prismic or [create an account][prismic-sign-up].
-3. Create a new Prismic content repository with sample content.
+1. Visit <https://prismic.io/dashboard>.
+2. Create a new Prismic repository by selecting **Next.js**.
+3. Select the **Minimal starter**.
+4. Fill out your repository details and continue with the steps given in Prismic.
 
 When you're ready to start your project, run the following command:
 
