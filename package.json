@@ -22,14 +22,14 @@
     "react-dom": "19.2.0"
   },
   "devDependencies": {
-    "@slicemachine/adapter-next": "0.3.84",
+    "@slicemachine/adapter-next": "0.3.85",
     "@types/node": "24.9.1",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
     "concurrently": "9.2.1",
     "eslint": "9.38.0",
     "eslint-config-next": "16.0.0",
-    "slice-machine-ui": "2.18.2",
+    "slice-machine-ui": "2.19.0",
     "typescript": "5.9.3"
   }
 }
