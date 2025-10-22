@@ -6,7 +6,7 @@ import { revalidateTag } from "next/cache";
  * content is published in Prismic.
  */
 export async function POST() {
-  revalidateTag("prismic");
+  revalidateTag("prismic", "max");
 
   return NextResponse.json({ revalidated: true, now: Date.now() });
 }
