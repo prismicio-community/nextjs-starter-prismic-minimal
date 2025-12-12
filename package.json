@@ -17,7 +17,7 @@
     "@prismicio/client": "7.21.0",
     "@prismicio/next": "2.0.2",
     "@prismicio/react": "3.2.2",
-    "next": "16.0.8",
+    "next": "16.0.10",
     "react": "19.2.1",
     "react-dom": "19.2.1"
   },
