@@ -1,9 +1,7 @@
 {
   "id": "page",
   "label": "Page",
-  "format": "page",
   "repeatable": true,
-  "status": true,
   "json": {
     "Main": {
       "uid": {
@@ -18,8 +16,8 @@
         "config": {
           "label": "Title",
           "placeholder": "",
-          "allowTargetBlank": true,
-          "single": "heading1"
+          "single": "heading1",
+          "allowTargetBlank": true
         }
       },
       "slices": {
@@ -61,5 +59,7 @@
         }
       }
     }
-  }
+  },
+  "status": true,
+  "format": "page"
 }
