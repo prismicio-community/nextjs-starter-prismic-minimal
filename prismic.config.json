@@ -1,0 +1,15 @@
+{
+  "repositoryName": "nextjs-starter-prismic-minimal",
+  "libraries": ["./src/slices"],
+  "routes": [
+    {
+      "type": "page",
+      "uid": "home",
+      "path": "/"
+    },
+    {
+      "type": "page",
+      "path": "/:uid"
+    }
+  ]
+}

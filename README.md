@@ -72,7 +72,7 @@ These are important files that you should leave as-is:
 - `app/api/exit-preview/route.ts` - Do not edit or delete this file. This is the API endpoint to close a Prismic preview session.
 - `app/api/preview/route.ts` - Do not edit or delete this file. This is the API endpoint to launch a Prismic preview session.
 - `app/slice-simulator/page.tsx` - Do not edit or delete this file. This file simulates your Slice components in development.
-- `slices/` - This directory contains Slice components, which are generated programmatically by Slice Machine. To customize a Slice template, you can edit the Slice's index.tsx file. To add Slices, delete Slices, or edit Slice models, use Slice Machine (more info below).
+- `slices/` - This directory contains Slice components. To customize a Slice template, you can edit the Slice's index.tsx file. To add Slices, delete Slices, or edit Slice models, use the Type Builder (more info below).
 
 Learn more about how to edit your components with [Fetch Data in Next.js](https://prismic.io/docs/technologies/fetch-data-nextjs) and [Template Content in Next.js](https://prismic.io/docs/technologies/template-content-nextjs).
 
@@ -82,11 +82,15 @@ Learn more about how to use [TypeScript with Prismic](https://prismic.io/docs/ty
 
 To put your project online, see [Deploy your Next.js App](https://prismic.io/docs/technologies/deploy-nextjs).
 
-### Edit content models with Slice Machine
+### Edit content models with the Type Builder
 
-This project includes an application called Slice Machine, which generates models for your Custom Types and Slices. Slice Machine stores the models locally in your codebase, so you can save and version them. It also syncs your models to Prismic. To learn how to use Slice Machine, read [Model Content in Next.js](https://prismic.io/docs/technologies/model-content-nextjs).
+This project uses the [Type Builder](https://prismic.io/docs/type-builder), Prismic's cloud-based interface for modeling your Custom Types and Slices. Model your content in the Type Builder, then use the [Prismic CLI](https://prismic.io/docs/cli) to sync your models into your codebase, where you can save and version them:
 
-If you change or add to your Custom Types, you'll need to update your route handling to match. To learn how to do that, read [Define Paths in Next.js](https://prismic.io/docs/technologies/define-paths-nextjs).
+```sh
+npx prismic pull
+```
+
+If you change or add to your Custom Types, you'll need to update your route handling to match. Routes are configured in the `routes` array in `prismic.config.json`.
 
 ## Documentation
 
